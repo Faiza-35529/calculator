@@ -48,6 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             textViewResult.setText("Please Enter 2nd Number");
         }
 
+        num1 = Integer.parseInt(editTextNumber1.getText().toString());
+        num2 = Integer.parseInt(editTextNumber2.getText().toString());
 
+        if(view.getId() == R.id.buttonAdd)
+        {
+            textViewResult.setText("Sum of the Numbers = " + (num1 + num2));
+        }
     }
 }
