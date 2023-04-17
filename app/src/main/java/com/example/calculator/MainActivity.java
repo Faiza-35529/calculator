@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextNumber1, editTextNumber2;
     Button buttonPlus, buttonSub, buttonMul, buttonDiv;
@@ -30,35 +30,24 @@ public class MainActivity extends AppCompatActivity {
 
         textViewResult = findViewById(R.id.result);
 
-        num1 = Integer.parseInt(editTextNumber1.getText().toString());
-        num2 = Integer.parseInt(editTextNumber2.getText().toString());
+        buttonPlus.setOnClickListener(this);
+        buttonSub.setOnClickListener(this);
+        buttonMul.setOnClickListener(this);
+        buttonDiv.setOnClickListener(this);
+    }
 
-        buttonPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textViewResult.setText("Sum of numbers is = " + (num1 + num2));
-            }
-        });
+    @Override
+    public void onClick(View view) {
+        if (editTextNumber1.getText().toString().equals(""))
+        {
+            textViewResult.setText("Please Enter 1st Number");
+        }
 
-        buttonSub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textViewResult.setText("Difference of numbers is = " + (num1 - num2));
-            }
-        });
+        if (editTextNumber2.getText().toString().equals(""))
+        {
+            textViewResult.setText("Please Enter 2nd Number");
+        }
 
-        buttonMul.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textViewResult.setText("Product of numbers is = " + (num1 * num2));
-            }
-        });
 
-        buttonDiv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textViewResult.setText("Division of numbers is = " + (num1 / num2));
-            }
-        });
     }
 }
