@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,6 +33,32 @@ public class MainActivity extends AppCompatActivity {
         num1 = Integer.parseInt(editTextNumber1.getText().toString());
         num2 = Integer.parseInt(editTextNumber2.getText().toString());
 
+        buttonPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textViewResult.setText("Sum of numbers is = " + (num1 + num2));
+            }
+        });
 
+        buttonSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textViewResult.setText("Difference of numbers is = " + (num1 - num2));
+            }
+        });
+
+        buttonMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textViewResult.setText("Product of numbers is = " + (num1 * num2));
+            }
+        });
+
+        buttonDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textViewResult.setText("Division of numbers is = " + (num1 / num2));
+            }
+        });
     }
 }
