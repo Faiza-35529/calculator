@@ -3,8 +3,15 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText editTextNumber1, editTextNumber2;
+    Button buttonPlus, buttonSub, buttonMul, buttonDiv;
+    TextView textViewResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
