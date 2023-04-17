@@ -55,5 +55,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             textViewResult.setText("Sum of the Numbers = " + (num1 + num2));
         }
+        else if(view.getId() == R.id.buttonSubtract)
+        {
+            textViewResult.setText("Difference of the Numbers = " + (num1 - num2));
+        }
+        else if(view.getId() == R.id.buttonMultiply)
+        {
+            textViewResult.setText("Product of the Numbers = " + (num1 * num2));
+        }
+        else if(view.getId() == R.id.buttonDivide)
+        {
+            textViewResult.setText("Division of the Numbers = " + (num1 / num2));
+        }
     }
 }
